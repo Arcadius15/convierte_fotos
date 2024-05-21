@@ -24,7 +24,11 @@ def convert_images_to_jpg(folder_path):
                     new_file_path = os.path.join(folder_path, new_filename)
                     rgb_im.save(new_file_path, 'JPEG')
                     print(f"Convertido {filename} a {new_filename}.")
+                    # Eliminamos el archivo original
+                    os.remove(file_path)
+                    print(f"Eliminado archivo original: {filename}")
 
 # Uso del script
-folder_path = '/ruta/a/tu/carpeta/de/imagenes'
+# Especifica la carpeta de imágenes con una ruta relativa
+folder_path = './fotos'
 convert_images_to_jpg(folder_path)
